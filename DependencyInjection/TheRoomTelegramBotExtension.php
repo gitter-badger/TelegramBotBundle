@@ -24,5 +24,16 @@ class TheRoomTelegramBotExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $this->configureParameterClass($container, $config);
+    }
+
+    /**
+     * @param ContainerBuilder $container
+     * @param $config
+     */
+    public function configureParameterClass(ContainerBuilder $container, array $config)
+    {
+        $container->setParameter('the_room_telegram_bot.routePath', $config['routePath']);
     }
 }

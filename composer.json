@@ -27,7 +27,7 @@
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "2.*",
-    "phpmd/phpmd" : "@stable",
+    "phpmd/phpmd": "@stable",
     "sebastian/phpcpd": "*",
     "phpunit/phpunit": "5.5.*"
   },

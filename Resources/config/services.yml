@@ -1,7 +1,13 @@
 services:
+
   the_room.telegram_bot.route.loader:
     class: TheRoom\TelegramBotBundle\Routing\RouteLoader
     calls:
       - [setRoutePath, ["%the_room_telegram_bot.routePath%"]]
     tags:
       - { name: routing.loader }
+
+  the_room.telegram_bot.service.message_update_request_handler:
+    class: TheRoom\TelegramBotBundle\Service\MessageUpdateRequestHandler
+    arguments:
+      - @event_dispatcher

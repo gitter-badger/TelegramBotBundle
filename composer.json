@@ -1,0 +1,39 @@
+{
+  "name": "the-room/telegram-bot-bundle",
+  "description": "Bundle for simplified work with telegram bot API",
+  "type": "symfony-bundle",
+  "authors": [
+    {
+      "name": "Myroslav Berlad",
+      "email": "berlad.myr@gmail.com"
+    },
+    {
+      "name": "Alex Verkeenko",
+      "email": "averkeenko@grossum.com"
+    }
+  ],
+  "keywords": [
+    "telegram",
+    "telegram bot bundle",
+    "bot bundle",
+    "bot"
+  ],
+  "license": [
+    "MIT"
+  ],
+  "require": {
+    "php": ">=5.4",
+    "symfony/framework-bundle": "~2.3|~3.0"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "2.*",
+    "phpmd/phpmd" : "@stable",
+    "sebastian/phpcpd": "*",
+    "phpunit/phpunit": "5.5.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "TheRoom\\TelegramBotBundle\\": ""
+    }
+  }
+}

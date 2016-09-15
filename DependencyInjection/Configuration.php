@@ -19,10 +19,20 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('the_room_telegram_bot');
-
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode
+            ->children()
+                ->scalarNode('routePath')
+                    ->defaultValue('/bot/{token}/handle-messages-updates')
+                ->end()
+                ->arrayNode('bots')
+                    ->requiresAtLeastOneElement()
+                        ->prototype('array')
+                            ->children()
+                                ->scalarNode('token')->end()
+                            ->end()
+                        ->end()
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }
